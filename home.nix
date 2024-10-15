@@ -90,20 +90,20 @@ in
   ];
 
 
-# Home Manager is pretty good at managing dotfiles. The primary way to manage
-# plain files is through 'home.file'.
-home.file = {
-  # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-  # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-  # # symlink to the Nix store copy.
-  # ".screenrc".source = dotfiles/screenrc;
+  # Home Manager is pretty good at managing dotfiles. The primary way to manage
+  # plain files is through 'home.file'.
+  home.file = {
+    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
+    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
+    # # symlink to the Nix store copy.
+    # ".screenrc".source = dotfiles/screenrc;
 
-  # # You can also set the file content immediately.
-  # ".gradle/gradle.properties".text = ''
-  #   org.gradle.console=verbose
-  #   org.gradle.daemon.idletimeout=3600000
-  # '';
-};
+    # # You can also set the file content immediately.
+    # ".gradle/gradle.properties".text = ''
+    #   org.gradle.console=verbose
+    #   org.gradle.daemon.idletimeout=3600000
+    # '';
+  };
 
   # programs.zsh = {
   #   enable = true;
@@ -134,6 +134,48 @@ home.file = {
   #   };
   #
   # };
+
+  programs.git = {
+    enable = true;
+
+    # Global Git configuration
+    userName = "Amritanshu Tripathy";     # Set your Git username
+    userEmail = "tripathyamritanshu7@gmail.com";  # Set your Git email
+
+    # Other settings can be defined here
+    extraConfig = {
+      # Git LFS settings
+      "filter.lfs.clean" = "git-lfs clean -- %f";
+      "filter.lfs.smudge" = "git-lfs smudge -- %f";
+      "filter.lfs.process" = "git-lfs filter-process";
+      "filter.lfs.required" = true;
+
+      # Credential settings
+      "credential.https://github.com.helper" = "!gh auth git-credential";
+      "credential.https://gist.github.com.helper" = "!gh auth git-credential";
+      "credential.helper" = "cache";
+
+      # Core settings
+      "core.editor" = "nvim";
+      "core.pager" = "delta";
+
+      # Safe directory
+      "safe.directory" = "/var/lib/git/amrit_website.git";
+
+      # Interactive settings
+      "interactive.diffFilter" = "delta --color-only";
+
+      # Delta configuration
+      "delta.navigate" = true;
+      "delta.dark" = true;
+
+      # Merge settings
+      "merge.conflictstyle" = "diff3";
+
+      # Diff settings
+      "diff.colorMoved" = "default";
+    };
+  };
 
   # Home Manager can also manage your environment variables through
   # 'home.sessionVariables'. These will be explicitly sourced when using a
