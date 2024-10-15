@@ -157,7 +157,7 @@ in
 
       # Core settings
       "core.editor" = ''nvim'';
-      "core.pager" = ''delta''';
+      "core.pager" = ''delta'';
 
       # Safe directory
       "safe.directory" = "/var/lib/git/amrit_website.git";
