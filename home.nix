@@ -156,8 +156,8 @@ in
       "credential.helper" = "cache";
 
       # Core settings
-      "core.editor" = ''nvim'';
-      "core.pager" = ''delta'';
+      "core.editor" = [ "nvim" ];  # Change to list format
+      "core.pager" = [ "delta" ];  # Change to list format
 
       # Safe directory
       "safe.directory" = "/var/lib/git/amrit_website.git";
