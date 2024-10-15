@@ -141,40 +141,43 @@ in
     # Global Git configuration
     userName = "Amritanshu Tripathy";     # Set your Git username
     userEmail = "tripathyamritanshu7@gmail.com";  # Set your Git email
+    delta.enable = true;
 
-    # Other settings can be defined here
-    extraConfig = {
-      # Git LFS settings
-      "filter.lfs.clean" = "git-lfs clean -- %f";
-      "filter.lfs.smudge" = "git-lfs smudge -- %f";
-      "filter.lfs.process" = "git-lfs filter-process";
-      "filter.lfs.required" = true;
-
-      # Credential settings
-      "credential.https://github.com.helper" = "!gh auth git-credential";
-      "credential.https://gist.github.com.helper" = "!gh auth git-credential";
-      "credential.helper" = "cache";
-
-      # Core settings
-      "core.editor" = [ "nvim" ];  # Change to list format
-      "core.pager" = [ "delta" ];  # Change to list format
-
-      # Safe directory
-      "safe.directory" = "/var/lib/git/amrit_website.git";
-
-      # Interactive settings
-      "interactive.diffFilter" = "delta --color-only";
-
-      # Delta configuration
-      "delta.navigate" = true;
-      "delta.dark" = true;
-
-      # Merge settings
-      "merge.conflictstyle" = "diff3";
-
-      # Diff settings
-      "diff.colorMoved" = "default";
+    delta.options = {
+      decorations = {
+        commit-decoration-style = "bold yellow box ul";
+        file-decoration-style = "none";
+        file-style = "bold yellow ul";
+      };
+      features = "decorations";
+      whitespace-error-style = "22 reverse";
     };
+
+    extraConfig = {
+      core = {
+        editor = "vim";
+      };
+    };
+
+    ignores = ["venv" "env"];
+
+    lfs.enable = true;
+
+
+    extraConfig = {
+
+    };
+  };
+
+  programs.gh = {
+    enable = true;
+    gitCredentialHelper.enable = true;
+
+    gitCredentialHelper.hosts = [
+      "https://github.com"
+      "https://gist.github.com"
+    ];
+
   };
 
   # Home Manager can also manage your environment variables through
