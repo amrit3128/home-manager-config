@@ -27,6 +27,7 @@ in
     pkgs.telegram-desktop
     pkgs.swaynotificationcenter
     pkgs.gopls
+    pkgs.bat
     pkgs.nixd
     pkgs.nil
     pkgs.gomodifytags
