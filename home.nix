@@ -28,7 +28,12 @@ in
     pkgs.swaynotificationcenter
     pkgs.gopls
     pkgs.bat
-    pkgs.jdt-language-server    pkgs.nixd
+    pkgs.tuir
+    pkgs.selectdefaultapplication
+    pkgs.nixd
+    pkgs.tree
+    pkgs.texliveTeTeX
+    pkgs.lsd
     pkgs.nil
     pkgs.gomodifytags
     pkgs.gotests
@@ -198,10 +203,12 @@ in
   #  /etc/profiles/per-user/amrit/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
     LOCALE_ARCHIVE="$(nix-env --installed --no-name --out-path --query glibc-locales)/lib/locale/locale-archive";
     LANG = "en_US.UTF-8";
     LC_ALL = "en_US.UTF-8";
+    BROWSER="/usr/bin/zen-browser";
+    TMP="/usr/bin/zen-browser";
+    EDITOR="/usr/bin/nvim";
   };
 
   # Let Home Manager install and manage itself.
