@@ -28,7 +28,7 @@ in
     pkgs.swaynotificationcenter
     pkgs.gopls
     pkgs.bat
-    pkgs.nixd
+    pkgs.jdt-language-server    pkgs.nixd
     pkgs.nil
     pkgs.gomodifytags
     pkgs.gotests
