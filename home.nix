@@ -27,6 +27,7 @@ in
     pkgs.telegram-desktop
     pkgs.swaynotificationcenter
     pkgs.gopls
+    pkgs.qt5ct
     pkgs.bat
     pkgs.tuir
     pkgs.selectdefaultapplication
@@ -38,6 +39,7 @@ in
     pkgs.gomodifytags
     pkgs.gotests
     pkgs.nixfmt-rfc-style
+    pkgs.vesktop
     pkgs.mpv
     pkgs.wofi
     pkgs.mpvScripts.mpris
@@ -54,8 +56,9 @@ in
     pkgs.gdu
     pkgs.gh
     pkgs.dunst
-    pkgs.pavucontrol
     pkgs.pywal
+    pkgs.ghc
+    pkgs.wallust
     pkgs.wallust
     pkgs.lazygit
     pkgs.wlogout
@@ -63,7 +66,6 @@ in
     pkgs.python312Packages.pytest
     unstable.python312Packages.nose
     unstable.neovim
-    pkgs.neovide
     pkgs.yazi
     pkgs.zoxide
     pkgs.zathura
@@ -208,6 +210,8 @@ in
     LC_ALL = "en_US.UTF-8";
     BROWSER="/usr/bin/zen-browser";
     TMP="/usr/bin/zen-browser";
+    GTK_THEME = "Adwaita-dark";
+    QT_QPA_PLATFORMTHEME = "qt5ct";
     EDITOR="/usr/bin/nvim";
   };
 
