@@ -39,7 +39,6 @@ in
     pkgs.gomodifytags
     pkgs.gotests
     pkgs.nixfmt-rfc-style
-    pkgs.vesktop
     pkgs.mpv
     pkgs.wofi
     pkgs.mpvScripts.mpris
