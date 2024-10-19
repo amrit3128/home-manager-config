@@ -40,6 +40,7 @@ in
     pkgs.gotests
     pkgs.nixfmt-rfc-style
     pkgs.mpv
+    pkgs.yacreader
     pkgs.wofi
     pkgs.mpvScripts.mpris
     pkgs.mu
@@ -50,7 +51,9 @@ in
     pkgs.helix
     pkgs.gore
     pkgs.zsh
+    pkgs.vscode
     unstable.zig_0_12
+    unstable.zed-editor
     unstable.rustup
     pkgs.gdu
     pkgs.gh
