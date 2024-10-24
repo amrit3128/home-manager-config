@@ -25,9 +25,12 @@ in
   # environment.
   home.packages = [
     pkgs.telegram-desktop
+    pkgs.bc
     pkgs.swaynotificationcenter
+    pkgs.hakuneko
     pkgs.gopls
-    pkgs.qt5ct
+    pkgs.libsForQt5.qt5ct
+    pkgs.googler
     pkgs.bat
     pkgs.tuir
     pkgs.selectdefaultapplication
@@ -51,9 +54,7 @@ in
     pkgs.helix
     pkgs.gore
     pkgs.zsh
-    pkgs.vscode
     unstable.zig_0_12
-    unstable.zed-editor
     unstable.rustup
     pkgs.gdu
     pkgs.gh
@@ -76,7 +77,9 @@ in
     pkgs.sbcl
     pkgs.haskellPackages.haskell-language-server
     pkgs.pandoc
-    pkgs.nodePackages_latest.js-beautify
+    pkgs.zola
+    pkgs.texliveFull
+    unstable.nodePackages.js-beautify
     pkgs.fzf
     pkgs.haskellPackages.hoogle
     pkgs.haskellPackages.lsp
