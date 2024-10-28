@@ -36,7 +36,7 @@ in
     pkgs.selectdefaultapplication
     pkgs.nixd
     pkgs.tree
-    pkgs.texliveTeTeX
+    # pkgs.texliveTeTeX
     pkgs.lsd
     pkgs.nil
     pkgs.gomodifytags
@@ -79,6 +79,8 @@ in
     pkgs.pandoc
     pkgs.zola
     pkgs.texliveFull
+    pkgs.luajitPackages.luarocks
+    pkgs.hunspell
     unstable.nodePackages.js-beautify
     pkgs.fzf
     pkgs.haskellPackages.hoogle
