@@ -9,8 +9,8 @@ in
   # manage.
   home.username = "amrit";
   home.homeDirectory = "/home/amrit";
-  home.file.".zshrc".source = ~/dotfiles/.zshrc;
-  home.file.".zshenv".source = ~/dotfiles/.zshenv;
+  # home.file.".zshrc".source = ~/dotfiles/.zshrc;
+  # home.file.".zshenv".source = ~/dotfiles/.zshenv;
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -25,6 +25,7 @@ in
   # environment.
   home.packages = [
     pkgs.telegram-desktop
+    pkgs.tmux
     pkgs.bc
     pkgs.swaynotificationcenter
     pkgs.hakuneko
@@ -32,11 +33,15 @@ in
     pkgs.libsForQt5.qt5ct
     pkgs.googler
     pkgs.bat
-    pkgs.tuir
     pkgs.selectdefaultapplication
     pkgs.nixd
+    pkgs.nix-search-cli
+    pkgs.tokei
+    pkgs.tmate
+    pkgs.pyright
+    pkgs.tldr
+    pkgs.nh
     pkgs.tree
-    # pkgs.texliveTeTeX
     pkgs.lsd
     pkgs.nil
     pkgs.gomodifytags
@@ -54,8 +59,11 @@ in
     pkgs.helix
     pkgs.gore
     pkgs.zsh
-    unstable.zig_0_12
-    unstable.rustup
+    pkgs.zig
+    pkgs.rustup
+    pkgs.gdb
+    pkgs.strace
+    pkgs.lurk
     pkgs.gdu
     pkgs.gh
     pkgs.dunst
@@ -68,7 +76,7 @@ in
     pkgs.feh
     pkgs.python312Packages.pytest
     unstable.python312Packages.nose
-    unstable.neovim
+    pkgs.neovim
     pkgs.yazi
     pkgs.zoxide
     pkgs.zathura
@@ -81,6 +89,7 @@ in
     pkgs.texliveFull
     pkgs.luajitPackages.luarocks
     pkgs.hunspell
+    pkgs.hunspellDicts.en_US
     unstable.nodePackages.js-beautify
     pkgs.fzf
     pkgs.haskellPackages.hoogle
